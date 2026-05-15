@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SkillSwap - Student Skill Exchange Platform</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f3f4f6;
+            color:#111827;
+        }
+
+        header{
+            background:#111827;
+            padding:20px 0;
+            position:sticky;
+            top:0;
+            z-index:100;
+        }
+
+        nav{
+            width:90%;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav h1{
+            color:white;
+            font-size:32px;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        nav ul li a:hover{
+            color:#60a5fa;
+        }
+
+        .hero{
+            height:90vh;
+            background:linear-gradient(to right,#2563eb,#7c3aed);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:20px;
+        }
+
+        .hero-content h2{
+            font-size:55px;
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            margin-bottom:30px;
+        }
+
+        .hero-content button{
+            padding:14px 30px;
+            border:none;
+            background:white;
+            color:#2563eb;
+            border-radius:8px;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .hero-content button:hover{
+            transform:scale(1.05);
+        }
+
+        .skills{
+            padding:80px 20px;
+            text-align:center;
+        }
+
+        .skills h2{
+            font-size:40px;
+            margin-bottom:50px;
+        }
+
+        .skills-container{
+            width:90%;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+
+        .card{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h3{
+            margin-bottom:15px;
+            color:#2563eb;
+        }
+
+        .card p{
+            margin-bottom:20px;
+            color:#555;
+        }
+
+        .card button{
+            padding:10px 20px;
+            border:none;
+            background:#7c3aed;
+            color:white;
+            border-radius:6px;
+            cursor:pointer;
+        }
+
+        .exchange{
+            padding:80px 20px;
+            background:white;
+            text-align:center;
+        }
+
+        .exchange h2{
+            font-size:40px;
+            margin-bottom:40px;
+        }
+
+        form{
+            width:350px;
+            margin:auto;
+            display:flex;
+            flex-direction:column;
+        }
+
+        form input{
+            padding:14px;
+            margin-bottom:18px;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+
+        form button{
+            padding:14px;
+            border:none;
+            background:#2563eb;
+            color:white;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        #result{
+            margin-top:25px;
+            font-size:18px;
+            font-weight:bold;
+            color:#111827;
+        }
+
+        footer{
+            background:#111827;
+            color:white;
+            text-align:center;
+            padding:25px;
+        }
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+            }
+
+            nav ul{
+                margin-top:15px;
+            }
+
+            .hero-content h2{
+                font-size:38px;
+            }
+
+            form{
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>SkillSwap</h1>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Exchange</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Exchange Skills & Learn Together</h2>
+
+            <p>
+                Connect with students, teach your skills,
+                and learn something new from others.
+            </p>
+
+            <button id="joinBtn">Join Now</button>
+        </div>
+    </section>
+
+    <section class="skills">
+
+        <h2>Popular Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>HTML, CSS, JavaScript, React</p>
+                <button>Exchange Skill</button>
+            </div>
+
+            <div class="card">
+                <h3>Programming</h3>
+                <p>Java, Python, C++, DSA</p>
+                <button>Exchange Skill</button>
+            </div>
+
+            <div class="card">
+                <h3>Graphic Design</h3>
+                <p>Canva, Photoshop, UI/UX</p>
+                <button>Exchange Skill</button>
+            </div>
+
+            <div class="card">
+                <h3>Digital Marketing</h3>
+                <p>SEO, Ads, Social Media</p>
+                <button>Exchange Skill</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="exchange">
+
+        <h2>Skill Exchange Form</h2>
+
+        <form id="exchangeForm">
+
+            <input 
+                type="text" 
+                id="name"
+                placeholder="Enter Your Name"
+                required
+            >
+
+            <input 
+                type="text"
+                id="offer"
+                placeholder="Skill You Offer"
+                required
+            >
+
+            <input 
+                type="text"
+                id="learn"
+                placeholder="Skill You Want To Learn"
+                required
+            >
+
+            <button type="submit">
+                Submit
+            </button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </section>
+
+    <footer>
+        <h2>SkillSwap</h2>
+        <p>Made for Students 🚀</p>
+    </footer>
+
+    <script>
+
+        const joinBtn = document.getElementById("joinBtn");
+
+        joinBtn.addEventListener("click", () => {
+            alert("Welcome To SkillSwap 🚀");
+        });
+
+        const form = document.getElementById("exchangeForm");
+        const result = document.getElementById("result");
+
+        form.addEventListener("submit", function(e){
+
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const offer = document.getElementById("offer").value;
+            const learn = document.getElementById("learn").value;
+
+            result.innerHTML = `
+                ${name} wants to exchange 
+                <span style="color:#2563eb">${offer}</span>
+                for 
+                <span style="color:#7c3aed">${learn}</span>
+            `;
+
+            form.reset();
+        });
+
+    </script>
+
+</body>
+</html>
